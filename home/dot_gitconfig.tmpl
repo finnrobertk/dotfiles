@@ -1,0 +1,31 @@
+[user]
+	name = Finn-Robert Kristensen
+	{{ if eq .machine "work" -}}
+		# email = me@workemail
+		# signingkey = WORKSIGNINGKEY
+	{{ else -}}
+  		# email = me@personalemail
+  		# signingkey = PERSONALSIGNINGKEY
+	{{ end }}
+
+[push]
+	followTags = true
+	default = current
+
+[core]
+    pager = diffr --colors refine-added:none:background:0x33,0x99,0x33:bold --colors added:none:background:0x33,0x55,0x33 --colors refine-removed:none:background:0x99,0x33,0x33:bold --colors removed:none:background:0x55,0x33,0x33 --line-numbers | less -R
+
+[interactive]
+    diffFilter = diffr --colors refine-added:none:background:0x33,0x99,0x33:bold --colors added:none:background:0x33,0x55,0x33 --colors refine-removed:none:background:0x99,0x33,0x33:bold --colors removed:none:background:0x55,0x33,0x33 --line-numbers
+
+[diff]
+	tool = bc3
+
+[merge]
+	tool = bc3
+
+[mergetool "bc3"]
+	trustExitCode = true
+
+[init]
+	defaultBranch = main
