@@ -1,4 +1,4 @@
-  # Created by Zap installer
+# Created by Zap installer
 [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
 
 # Zap-plugins
@@ -16,7 +16,7 @@ plug "mafredri/zsh-async"
 zap init
 
 # Load aliases
-[[ -f ~/.dotfiles/zsh/aliases.zsh ]] && source ~/.dotfiles/zsh/aliases.zsh
+[ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
