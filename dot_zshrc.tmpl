@@ -1,0 +1,7 @@
+{{ template "common/dot_zshrc.tmpl" . }}
+
+{{- if eq .profile "work" }}
+{{ template "work/dot_zshrc.tmpl" . }}
+{{- else if eq .profile "personal" }}
+{{ template "personal/dot_zshrc.tmpl" . }}
+{{- end }}

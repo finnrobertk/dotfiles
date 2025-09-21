@@ -1,0 +1,7 @@
+{{ if ne .profile "work" }}
+work/*
+{{ end }}
+
+{{ if ne .profile "personal" }}
+personal/*
+{{ end }}

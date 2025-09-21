@@ -1,0 +1,19 @@
+source "${ZAP_DIR:-${HOME}/.zap}/zap.zsh"
+zap install \
+  zsh-users/zsh-autosuggestions \
+  zsh-users/zsh-syntax-highlighting \
+  eza-community/eza-zsh
+
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+if [ -f "$HOME/.config/env/global.env" ]; then
+  export $(grep -v '^#' "$HOME/.config/env/global.env" | xargs)
+fi
+
+source "$HOME/.config/zsh/aliases.zsh"
+source "$HOME/.config/zsh/env.zsh"
+source "$HOME/.config/zsh/prompt.zsh"
